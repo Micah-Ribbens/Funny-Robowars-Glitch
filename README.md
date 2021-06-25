@@ -11,8 +11,10 @@ git add .
 git remote add origin https://github.com/Micah-Ribbens/Funny-Robowars-Glitch.git
 git branch -M main
 git push -u origin main
+7. Be happy that your dumb little glitch is open to the world to see
+
 How to get the code from GitHub full of glitches:
-=========================================================
-Just hit download and open the file
+=====================================================================================
+1. Just hit download and open the file
 
 
