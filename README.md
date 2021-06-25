@@ -1,15 +1,18 @@
-How to send code to Github:
+How to send code to this GitHub full of glitches:
 =============================================================================================================
-1. git switch -C enter_branch_name
-2. Make sure you are in the branch name. If not (do step 3). If yes (do skip step 3)
-3. git checkout branch_name_from_step_1
-4. git add .
-5. Check to make sure the files are good by (see step 3)
-6. git status
-7. git commit -m "enter description for what you did" (Ex: "Changed player color" not " Changed player color ")
-8. git push -u origin branch_name_from_step_1
+1. Copy and paste all files from the Robowars folder
+2. Put them in another folder called glitch
+3. Navigate to folder called glitch in git bash
+4. Copy and paste all the commands below into git bash
+git init
+git add .
+5. git commit -m "(descriptor of glitch)"
+6. Copy and past all the commands below into git bash
+git remote add origin https://github.com/Micah-Ribbens/Funny-Robowars-Glitch.git
+git branch -M main
+git push -u origin main
+How to get the code from GitHub full of glitches:
+=========================================================
+Just hit download and open the file
 
-How to get code from Github:
-=============================================================================================================
-1. Check to make sure that the code in Github reflects what you did. If yes:
-2. git pull https://github.com/Micah-Ribbens/Robowars
+
