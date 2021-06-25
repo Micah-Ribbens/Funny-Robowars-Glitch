@@ -1,0 +1,78 @@
+import pygame
+from important_variables import (
+    win,
+    screen_height,
+    screen_width
+)
+class WallOfDeath:
+    color = (0, 0, 250)
+    x_coordinate = 0
+    y_coordinate = 0
+    height = screen_height
+    length = 0
+    movement = screen_width * 0.0002
+    def draw():
+        # print("IVE BEEN CALLED")
+        # if WallOfDeath.x_coordinate < 0:
+        #     return
+        # print("DRAW")
+        # print(WallOfDeath.x_coordinate)
+        pygame.draw.rect(win, (WallOfDeath.color), (WallOfDeath.x_coordinate,
+                                WallOfDeath.y_coordinate, WallOfDeath.length, WallOfDeath.height))
+
+    def move():
+        # pass
+        if WallOfDeath.x_coordinate + WallOfDeath.movement <= 0:
+            # print("X COORDINATE: ", WallOfDeath.x_coordinate)
+            WallOfDeath.x_coordinate += WallOfDeath.movement
+        else:
+            print("UP LENGTH: ", WallOfDeath.length)
+            print("UP X COORDINATE: ", WallOfDeath.x_coordinate)
+            print("EXCESS: ", WallOfDeath.length + WallOfDeath)
+            excess = WallOfDeath.length + WallOfDeath.x_coordinate
+            WallOfDeath.x_coordinate = WallOfDeath.x_coordinate + (WallOfDeath.movement - excess)
+            WallOfDeath.length += excess
+        # excess = WallOfDeath.x_coordinate + WallOfDeath.movement
+        # if WallOfDeath.x_coordinate <= 0:
+        #     WallOfDeath.x_coordinate += (WallOfDeath.movement - excess)
+        #     WallOfDeath.length += excess
+        # else:
+        #     WallOfDeath.length += WallOfDeath.movement
+        # if WallOfDeath.x_coordinate <= 0 and excess > 0:
+        #     WallOfDeath.x_coordinate += (WallOfDeath.movement - excess)
+        # elif WallOfDeath.x_coordinate <= 0 and excess <= 0:
+        #     WallOfDeath.x_coordinate += WallOfDeath.movement
+        # else:
+        #     WallOfDeath.length += WallOfDeath.movement
+    
+    def move_backwards(amount):
+        # print("e: ", excess)
+        # print("a: ", amount)
+        if WallOfDeath.length >= amount:
+            WallOfDeath.length -= amount
+        else:
+            # print("Length: ", WallOfDeath.length)
+            # print("AMOUNT: ", amount)
+            excess = amount - WallOfDeath.length
+            WallOfDeath.length = WallOfDeath.length - amount + excess
+            WallOfDeath.x_coordinate -= excess
+            print("DOWN LENGTH: ", WallOfDeath.length)
+            print("DOWN X COORDINATE: ", WallOfDeath.x_coordinate)
+        # if excess < 0:
+        #     WallOfDeath.length -= (amount - excess)
+        #     WallOfDeath.x_coordinate -= excess
+        # els
+        #     WallOfDeath.length -= amount
+
+        # excess = WallOfDeath.length - amount
+        # if WallOfDeath.x_coordinate <= 0 and excess > 0:
+        #     WallOfDeath.x_coordinate -= (amount - excess)
+        # elif WallOfDeath.x_coordinate <= 0 and excess <= 0:
+        #     WallOfDeath.x_coordinate -= amount
+        # else:
+        #     WallOfDeath.length -= amount
+        # WallOfDeath.length -= amount
+    
+    def reset():
+        WallOfDeath.length = 10
+        WallOfDeath.x_coordinate = 0
